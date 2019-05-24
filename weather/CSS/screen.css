@@ -12,6 +12,7 @@
 
 /* 2. General */
 body {
+    font-size: 20px;
     font-family: helvetica, sans-serif;
 }
 
@@ -20,6 +21,8 @@ h2,h3,h4,h5,h6 {
 }
 header {
     background-color: #0e89d5;
+    display: flex;
+    align-items: center;
 }
 
 /* 3. Mobile Rules */
