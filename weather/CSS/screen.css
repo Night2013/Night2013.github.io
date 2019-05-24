@@ -21,3 +21,6 @@ h1, nav {
 }
 
 /* 3. Mobile Rules */
+#logo {
+    height: 50px;
+}
