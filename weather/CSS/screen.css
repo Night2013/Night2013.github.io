@@ -8,6 +8,8 @@
 /* 1. Imports */
 @import url('https://fonts.googleapis.com/css?family=Sansita&display=swap');
 
+@import url("normalize.css")
+
 /* 2. General */
 body {
     font-family: helvetica, sans-serif;
