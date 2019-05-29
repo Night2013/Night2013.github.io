@@ -25,6 +25,14 @@ header {
     align-items: center;
 }
 
+html {
+    box-sizing: border-box;
+   }
+   
+   *, *:before, *:after{
+    box-sizing: inherit;
+   }
+
 /* 3. Mobile Rules */
 #logo {
     height: 50px;
