@@ -33,6 +33,10 @@ html {
     box-sizing: inherit;
    }
 
+#wind-direction {
+   transform: rotate(20deg);
+}
+
 /* 3. Mobile Rules */
 #logo {
     height: 50px;
@@ -47,24 +51,25 @@ html {
     margin: .2em auto;
     border: 1px solid;
     border-radius: 15px;
-  }
+}
 
-  nav ul li { 
+nav ul li { 
     display: inline-block; 
     list-style: none; 
-  }
+}
 
-  nav {
+nav {
     position: fixed;
     bottom: 0;
     left: 0;
-  }
+}
 
-  footer{
+footer{
     margin-bottom: 2em;
-   }
+}
 
-   #site-brand {
+#site-brand {
     font-size: 2em;
     font-weight: 600;
-  }
+}
+
