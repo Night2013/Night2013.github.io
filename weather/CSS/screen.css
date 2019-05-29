@@ -106,3 +106,8 @@ nav {
     left: 0;
     width: 100%;
 }
+
+#hour-temp {
+     white-space: no-wrap;
+     overflow: auto;
+ }
