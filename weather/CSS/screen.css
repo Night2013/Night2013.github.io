@@ -56,6 +56,13 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+#daily-high {
+    color: red;
+}
+
+#daily-low {
+    color: blue;
+}
 /* 3. Mobile Rules */
 #logo {
     height: 50px;
