@@ -33,3 +33,10 @@ header {
 #rain {
     height: 50px;
 }
+
+.windows{
+    background-color: rgba(200,200,200,.6);
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px;
+  }
