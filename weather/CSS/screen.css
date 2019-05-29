@@ -36,7 +36,27 @@ header {
 
 .windows{
     background-color: rgba(200,200,200,.6);
-    margin: 1em auto;
+    margin: .2em auto;
     border: 1px solid;
     border-radius: 15px;
+  }
+
+  nav ul li { 
+    display: inline-block; 
+    list-style: none; 
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  footer{
+    margin-bottom: 2em;
+   }
+
+   #site-brand {
+    font-size: 2em;
+    font-weight: 600;
   }
