@@ -11,20 +11,26 @@
 @import url("normalize.css");
 
 /* 2. General */
+
+/* font and size for body */
 body {
     font-size: 20px;
     font-family: helvetica, sans-serif;
 }
 
+/* font for headings */
 h1,h2,h3,h4,h5,h6 {
     font-family: Sansita, sans-serif;
 }
-header, footer {
+
+/* background color for header and footer */
+header, footer, nav {
     background-color: #0e89d5;
     display: flex;
     align-items: center;
 }
 
+/*border box for entire html doc */
 html {
     box-sizing: border-box;
    }
