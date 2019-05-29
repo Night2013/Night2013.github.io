@@ -44,6 +44,11 @@ html {
     border: 1px solid;
     border-radius: 15px;
 }
+
+#wind-direction {
+    position: relative;
+    text-align: center;
+  }
 /* 3. Mobile Rules */
 #logo {
     height: 50px;
