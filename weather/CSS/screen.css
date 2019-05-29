@@ -37,6 +37,13 @@ html {
    transform: rotate(235deg);
 }
 
+.windows{
+    text-align: center;
+    background-color: rgba(200,200,200,.6);
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px;
+}
 /* 3. Mobile Rules */
 #logo {
     height: 50px;
@@ -44,13 +51,6 @@ html {
 
 #rain {
     height: 50px;
-}
-
-.windows{
-    background-color: rgba(200,200,200,.6);
-    margin: .2em auto;
-    border: 1px solid;
-    border-radius: 15px;
 }
 
 nav ul li { 
