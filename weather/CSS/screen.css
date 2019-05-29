@@ -108,6 +108,6 @@ nav {
 }
 
 #hour-temp {
-     white-space: no-wrap;
+     white-space: wrap;
      overflow: auto;
  }
