@@ -48,7 +48,7 @@ html {
     background-color: rgba(200,200,200,.6);
     margin: .2em auto;
     border: 1px solid;
-    border-radius: 15px;
+    border-radius: 15px; 
 }
 
 #wind {
@@ -79,7 +79,7 @@ html {
 }
 
 #rain {
-    height: 50px;
+    height: 200px;
 }
 
 nav ul li { 
