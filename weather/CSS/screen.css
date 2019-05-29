@@ -6,9 +6,12 @@
 */
 
 /* 1. Imports */
-@import url('https://fonts.googleapis.com/css?family=Sansita&display=swap');
 
+/* 1.1 Normalize */
 @import url("normalize.css");
+
+/* 1.2 Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Sansita&display=swap');
 
 /* 2. General */
 
