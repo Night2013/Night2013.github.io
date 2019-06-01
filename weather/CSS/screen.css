@@ -112,5 +112,11 @@ nav {
      flex-direction: row;
      justify-content: space-around;
  }
+
  /* 4. Large Screen Rules */
- 
+
+ @media all and (min-width: 800px) {
+    nav {
+        align-items: flex-start;
+    }
+ }
