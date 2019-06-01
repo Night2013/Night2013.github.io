@@ -107,11 +107,6 @@ nav {
     width: 100%;
 }
 
-#hour-temp {
-     white-space: wrap;
-     overflow: auto;
- }
-
  nav {
      display: flex;
      flex-direction: row;
