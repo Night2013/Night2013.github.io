@@ -111,3 +111,8 @@ nav {
      white-space: wrap;
      overflow: auto;
  }
+
+ nav {
+     display: flex;
+     flex-direction: row;
+ }
