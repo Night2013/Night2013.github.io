@@ -100,12 +100,7 @@ nav ul li {
     list-style: none; 
 }
 
-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
+
 
 #hour-temp {
      white-space: wrap;
