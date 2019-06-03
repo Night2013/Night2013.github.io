@@ -116,7 +116,7 @@ nav {
  /* 4. Large Screen Rules */
  
 
- @media screen and (min-width: 800px) {
+ @media screen and (min-width: 880px) {
     #main3 {
         display: flex;
     }
@@ -125,5 +125,9 @@ nav {
         flex-wrap: wrap;
         flex-direction: row;
         flex: 1 1 auto;
+    }
+    body {
+        width: 90%;
+        margin: 0 auto;
     }
  }
