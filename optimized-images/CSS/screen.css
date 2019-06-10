@@ -13,9 +13,10 @@ main {
 }
 
 .box {
-    border: 2px solid;
-    padding: 10px;
-    margin: 10px;
+    text-align: center;
+    margin: .2em auto;
+    border: 1px solid;
+    border-radius: 15px;
 }
 /* 3. Mobile Rules */
 .large {
