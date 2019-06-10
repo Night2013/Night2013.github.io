@@ -12,12 +12,7 @@ main {
     flex-flow: row wrap;
 }
 
-.box {
-    text-align: center;
-    margin: 1em auto;
-    border: 1px solid;
-    border-radius: 15px;
-}
+
 /* 3. Mobile Rules */
 .large {
     display: none;
