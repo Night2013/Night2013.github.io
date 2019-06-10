@@ -1,0 +1,19 @@
+/* Table of Contents
+1. Imports
+2. General Rules
+3. Mobile Rules
+4. Large Screen Rules
+*/
+
+/* 1. Imports */
+/* 2. General Rules */
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.box {
+    border: 2px solid;
+    padding: 10px;
+    margin: 10px;
+}
