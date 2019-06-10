@@ -170,7 +170,13 @@ h1 {
 		line-height: 1.125;
 	}
 	/*	Background Images - Use with medium screens */
-	.page-header {}
+	.page-header {
+		width: 100%;
+		background-image: url(../images/nps-logo_50.png), url(../images/looking_down_400.jpg);
+		background-repeat: no-repeat, no-repeat, no-repeat;
+		background-position: right, left;
+		background-size: auto, cover;
+	}
 	.page-nav {
 		position: relative;
 	}
@@ -215,7 +221,13 @@ h1 {
 		line-height: 1.05;
 	}
 	/*	Background Images - Use with large screens */
-	.page-header {}
+	.page-header {
+		width: 100%;
+		background-image: url(../images/nps-logo_150.png), url(../images/looking_down_1200.jpg);
+		background-repeat: no-repeat, no-repeat, no-repeat;
+		background-position: right, left;
+		background-size: auto, cover;
+	}
 	.page-nav li {
 		flex: 0 1 10%;
 	}
