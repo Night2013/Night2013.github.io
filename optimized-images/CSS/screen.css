@@ -14,7 +14,7 @@ main {
 
 .box {
     text-align: center;
-    margin: .2em auto;
+    margin: 1em auto;
     border: 1px solid;
     border-radius: 15px;
 }
