@@ -51,7 +51,7 @@ h1 {
 
 .page-header {
 	width: 100%;
-	background-image: url(../images/nps-logo-50tall.png), url(../images/looking-down-400.jpg);
+	background-image: url(../images/nps-logo_50.png), url(../images/looking_down_400.jpg);
 	background-repeat: no-repeat, no-repeat, no-repeat;
 	background-position: right, left;
 	background-size: auto, cover;
