@@ -42,6 +42,7 @@ html {
     box-sizing: inherit;
    }
 
+/* rotates wind pointer */
 #dial {
    transform: rotate(235deg);
 }
