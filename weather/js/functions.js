@@ -18,12 +18,13 @@ console.log('My javascript is being read.');
     let newCondition = getCondition(condition);
     changeSummaryImage(newCondition);
 
-// Variables for changeSummaryImage()
-
-
 // Variables for convertMeters()
     let meters = 1200;
     convertMeters(meters);
+
+    // Variables for convertElevation()
+    const elevationFeet = convertMeters(meters);
+    convertElevation(elevationHeight);
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -147,4 +148,9 @@ function convertMeters(meters) {
     feet = Math.round(feet);
     console.log(feet);
     return feet;
+}
+
+function convertElevation(elevation) {
+    // convert elevation into feet
+    elevationHeight.innerHTML = elevationFeet;
 }
