@@ -42,7 +42,7 @@ html {
     box-sizing: inherit;
    }
 
-#wind-direction {
+#dial {
    transform: rotate(235deg);
 }
 
