@@ -124,7 +124,32 @@ footer{
 }
 
 /* 3. Mobile Rules */
-nav ul li { 
+#curWeather {
+    background-size: cover;
+   }
+   
+   /* Background pictures for summary */
+   .clear {
+    background-image: url("/optimized-images/images/clear_400.jpg");
+   }
+
+   .clouds {
+    background-image: url("/optimized-images/images/clouds_400.jpg");
+   }
+
+   .fog {
+    background-image: url("/optimized-images/images/fog_400.jpg");
+   }
+
+   .rain {
+    background-image: url("/optimized-images/images/rain_400.jpg");
+   }
+
+   .snow {
+    background-image: url("/optimized-images/images/snow_400.jpg");
+   }
+
+av ul li { 
     display: inline-block; 
     list-style: none; 
 }
@@ -159,4 +184,19 @@ nav {
         width: 90%;
         margin: 0 auto;
     }
+    .clear {
+        background-image: url("/optimized-images/images/clear_1200.jpg");
+       }
+    .clouds {
+        background-image: url("/optimized-images/images/clouds_1200.jpg");
+       }
+    .fog {
+        background-image: url("/optimized-images/images/fog_1200.jpg");
+       }
+    .rain {
+        background-image: url("/optimized-images/images/rain_1200.jpg");
+       }
+    .snow {
+        background-image: url("/optimized-images/images/snow_800.jpg");
+       }
  }
