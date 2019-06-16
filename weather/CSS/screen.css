@@ -43,8 +43,36 @@ html {
    }
 
 /* rotates wind pointer */
-#dial {
-   transform: rotate(235deg);
+.n {
+    transform: rotate(0deg);
+}
+
+.ne {
+    transform: rotate(45deg);
+}
+
+.e {
+    transform: rotate(90deg);
+}
+
+.se {
+    transform: rotate(135deg);
+}
+
+.s {
+    transform: rotate(180deg);
+}
+
+.sw {
+    transform: rotate(225deg);
+}
+
+.w {
+    transform: rotate(270deg);
+}
+
+.nw {
+    transform: rotate(315deg);
 }
 
 .windows, #forecast {
