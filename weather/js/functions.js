@@ -13,6 +13,14 @@ console.log('My javascript is being read.');
     const direction = "SSW";
     windDial(direction);
 
+// Variables for getConditions()
+    let condition = "cloud";
+    let newCondition = getCondition(condition);
+    changeSummaryImage(newCondition);
+
+// Variables for changeSummaryImage()
+
+
 // Variables for convertMeters()
     let meters = 1200;
     convertMeters(meters);
@@ -79,6 +87,55 @@ function windDial(direction){
      dial.setAttribute("class", "w");
      break;
    }
+}
+
+// Get the weather condition
+function getCondition(condtion) {
+    // check if the condition passed
+    console.log(condition);
+    switch(true) {
+        // Clear
+        case (condition.includes("clear")) || condition.includes("sunny"):
+            return "clear";
+        // Rain
+        case (condition.includes("rain")) || condition.includes("wet"):
+            return "rain";
+        // Fog
+        case (condition.includes("fog")):
+            return "fog";
+        // Snow
+        case (condition.includes("snow")):
+            return "snow";
+        // Clouds
+        case (condition.includes("cloud")):
+            return "clouds";
+        default:
+            return "clear";
+    }
+}
+
+function changeSummaryImage(newCondition) {
+    // Checks the weather condition
+    console.log(newCondition);
+
+    // Changes the class depending on condition
+    switch(newCondition) {
+        // Clear
+        case "clear": curWeather.setAttribute("class", "clear");
+        break;
+        // Rain
+        case "rain": curWeather.setAttribute("class", "rain");
+        break;
+        // Fog
+        case "fog": curWeather.setAttribute("class", "fog");
+        break;
+        // Snow
+        case "snow": curWeather.setAttribute("class", "snow");
+        break;
+        // Clouds
+        case "clouds": curWeather.setAttribute("class", "clouds");
+        break;
+    }
 }
 
 function convertMeters(meters) {
