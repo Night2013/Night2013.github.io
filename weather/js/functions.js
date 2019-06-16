@@ -14,8 +14,8 @@ console.log('My javascript is being read.');
     windDial(direction);
 
 // Variables for convertMeters()
-    const meters = 12;
-    convertMeters();
+    let meters = 1200;
+    convertMeters(meters);
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -81,13 +81,13 @@ function windDial(direction){
    }
 }
 
-function convertMeters() {
+function convertMeters(meters) {
     // Convert to feet
     let feet = meters * 3.2808;
     // Checks to see if equation is right
     console.log(feet);
     // Round to nearest integer
-    feet = Math.round;
+    feet = Math.round(feet);
     console.log(feet);
     return feet;
 }
