@@ -4,12 +4,18 @@ console.log('test');
 console.log('My javascript is being read.');
 
 // Variables for Function Use
-const temp = 31;
-const speed = 5;
-buildWC(speed, temp);
+// Variables for buildWC()
+    const temp = 31;
+    const speed = 5;
+    buildWC(speed, temp);
 
-const direction = "SSW";
-windDial(direction);
+// Variables for windDial()
+    const direction = "SSW";
+    windDial(direction);
+
+// Variables for convertMeters()
+    const meters = 12;
+    convertMeters();
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -73,4 +79,15 @@ function windDial(direction){
      dial.setAttribute("class", "w");
      break;
    }
+}
+
+function convertMeters() {
+    // Convert to feet
+    let feet = meters * 3.2808;
+    // Checks to see if equation is right
+    console.log(feet);
+    // Round to nearest integer
+    feet = Math.round;
+    console.log(feet);
+    return feet;
 }
