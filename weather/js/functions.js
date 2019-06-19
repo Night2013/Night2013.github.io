@@ -5,12 +5,12 @@ console.log('My javascript is being read.');
 
 // Variables for Function Use
 // Variables for buildWC()
-    const temp = 31;
-    const speed = 5;
+    let temp = 31;
+    let speed = 5;
     buildWC(speed, temp);
 
 // Variables for windDial()
-    const direction = "SSW";
+    let direction = "SSW";
     windDial(direction);
 
 // Variables for getConditions()
@@ -23,12 +23,16 @@ console.log('My javascript is being read.');
     convertMeters(meters);
 
     // Variables for convertElevation()
-    const elevationFeet = convertMeters(meters);
+    let elevationFeet = convertMeters(meters);
     convertElevation(elevationHeight);
+
+    // Get the next hour based on the current time
+    let date = new Date(); 
+    let nextHour = date.getHours() + 1;
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
-  const feelTemp = document.getElementById('feelTemp');   
+  let feelTemp = document.getElementById('feelTemp');   
     // Compute the windchill
     let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
     console.log(wc);
@@ -47,7 +51,7 @@ function buildWC(speed, temp) {
 // Wind Dial Function
 function windDial(direction){
     // Get the wind dial container
-    const dial = document.getElementById("dial");
+    let dial = document.getElementById("dial");
 
     // Determine the dial class
     switch (direction){
