@@ -2,7 +2,7 @@
 <html lang="en-us">
  <head>
   <meta charset="UTF-8">
-  <title>Greenville, SC | Weather Site</title>
+  <title id = "title-page">Greenville, SC | Weather Site</title>
   <meta name="description" content="A page that shows the weather for Greenville, South Carolina.">
   <meta name="viewport" content="width=device-width">
   <link rel = "stylesheet" href = "CSS/screen.css" media = "screen">
@@ -12,12 +12,16 @@
          <img id = "logo" src="../weather/franklin-idaho-pics/logo.jpg" alt="Weather Site Logo">
          <p id = "site-brand">The Weather Site</p>
     </header>
-    <main>
+    <section id="status">Please be patient while I get your weather information.</section>
+
+
+
+    <main id = "content">
         <section>
             <h1 class = "font">Greenville, SC</h1>
-                 <span><strong>Zip:</strong> 29601 |</span>
+                 <span id = "zip"><strong>Zip:</strong> 29601 |</span>
                  <span id = "elevation"><strong>Elevation:</strong><span id = "elevationHeight"> 294.437m</span> ft |</span>
-                 <span><strong>Location:</strong> 82.4 W, 34.85 N</span>
+                 <span id = "location"><strong>Location:</strong> 82.4 W, 34.85 N</span>
         </section>
     <section id = 'curWeather'>        
         <section class = "windows" id = "temperature">    
@@ -31,8 +35,8 @@
             <h2 class = "font">Wind</h2>
                 <img id = "dial" class = "ssw" src = "franklin-idaho-pics/wind-pointer.png" alt = "Wind Direction">
                 <p id = "wind-speed">8mph</p>
-                <p>Wind Direction: SW</p>
-                <p>Gusts: 15-17mph</p>
+                <p id = "direction">Wind Direction: SW</p>
+                <p id = "gusts">Gusts: 15-17mph</p>
         </section>    
         <section class = "windows" id = "weather">    
             <h2 class = "font">Thunderstorms</h2>
@@ -41,23 +45,23 @@
     </section>
         <section id = "forecast">
                 <h2 class = "font">Hourly Forecast</h2>
-                    <span>10am: 55&#8457; |</span>
-                    <span>11am: 55&#8457; |</span>
-                    <span>12pm: 56&#8457; |</span>
-                    <span>1pm: 57&#8457; |</span>
-                    <span>2pm: 57&#8457; |</span>
-                    <span>3pm: 57&#8457; |</span>
-                    <span>4pm: 59&#8457; |</span>
-                    <span>5pm: 59&#8457; |</span>
-                    <span>6pm: 59&#8457; |</span>
-                    <span>7pm: 60&#8457; |</span>
-                    <span>8pm: 61&#8457; |</span>
-                    <span>9pm: 63&#8457; |</span>
-                    <span>10pm: 64&#8457;</span>
+                    <span id = "10am">10am: 55&#8457; |</span>
+                    <span id = "11am">11am: 55&#8457; |</span>
+                    <span id = "12pm">12pm: 56&#8457; |</span>
+                    <span id = "1pm">1pm: 57&#8457; |</span>
+                    <span id = "2pm">2pm: 57&#8457; |</span>
+                    <span id = "3pm">3pm: 57&#8457; |</span>
+                    <span id = "4pm">4pm: 59&#8457; |</span>
+                    <span id = "5pm">5pm: 59&#8457; |</span>
+                    <span id = "6pm">6pm: 59&#8457; |</span>
+                    <span id = "7pm">7pm: 60&#8457; |</span>
+                    <span id = "8pm">8pm: 61&#8457; |</span>
+                    <span id = "9pm">9pm: 63&#8457; |</span>
+                    <span id = "10pm">10pm: 64&#8457;</span>
         </section>
     </main>
     <footer>
-            <nav>
+            <nav id = "nav-bar">
                     <span><a href = "https://night2013.github.io/">Home</a></span>
                     <span><a href = "https://night2013.github.io/weather/franklin-idaho.html">Search</a></span>
                     <span><a href = "https://night2013.github.io/weather/franklin-idaho.html">Franklin</a></span>
