@@ -1,15 +1,17 @@
-use strict
+"use strict";
 
-// fetches function
-fetchData(weatherURL);
+
 
 
 
 let navbar = document.getElementById("nav-bar");
 let statusContainer = document.getElementById("status");
 let contentContatiner = document.getElementById("content");
+let weatherURL = "https://night2013.github.io/weather/js/weather.json"
 
-let weatherURL = "path/to/weather.json";
+// fetches function
+fetchData(weatherURL);
+
 function fetchData(weatherURL){
   let cityName = 'Greenville'; // The data we want from the weather.json file
   fetch(weatherURL)
