@@ -123,6 +123,10 @@ footer{
     font-weight: 600;
 }
 
+.hide{
+    display: none;
+  }
+
 /* 3. Mobile Rules */
 #curWeather {
     background-size: cover;
