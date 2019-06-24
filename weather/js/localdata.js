@@ -161,7 +161,7 @@ function fetchData(weatherURL){
     let inputNinePM = document.getElementById("9pm");
     inputNinePM.innerHTML = "9pm: " + ninePM + " |";
     let inputTenPM = document.getElementById("10pm");
-    inputTenPM.innerHTML = "10pm: " + tenPM + " |";
+    inputTenPM.innerHTML = "10pm: " + tenPM;
     // Set the zip and elevation
     let inputZip = document.getElementById("zip");
     inputZip.innerHTML = "Zip: " + locZip  + " |";
