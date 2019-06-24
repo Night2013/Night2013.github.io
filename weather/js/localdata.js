@@ -141,6 +141,9 @@ function fetchData(weatherURL){
 
     // Set the zip and elevation
     locZip = document.getElementById("zip").innerHTML;
+    locElevation = document.getElementById("elevation").innerHTML;
+    locLongitude = document.getElementById("longitude").innerHTML;
+    locLatitude = document.getElementById("latitude").innerHTML;
 
     // Change the status of the containers
     contentContainer.setAttribute('class', ''); // removes the hide class
