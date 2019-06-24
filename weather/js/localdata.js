@@ -115,35 +115,62 @@ function fetchData(weatherURL){
     
 
     // Set the temperature information
-    locTemp = document.getElementById("current-temp").innerHTML;
-    locHigh = document.getElementById("daily-high").innerHTML;
+    let inputTemp = document.getElementById("current-temp");
+    inputTemp.innerHTML = locTemp + "&#8457;";
+    let inputHigh = document.getElementById("daily-high");
+    inputHigh.innerHTML = locHigh + "&#8457;";
+    let inputLow = document.getElementById("daily-low");
+    inputLow.innerHTML = locLow + "&#8457;";
 
     // Set the wind information
-    locWind = document.getElementById("wind-speed").innerHTML;
+    let inputWind = document.getElementById("wind-speed");
+    inputWind.innerHTML = locWind + "mph";
+    let inputDirection = document.getElementById("direction");
+    inputDirection.innerHTML = "Wind Direction: " + locDirection;
+    let inputGusts = document.getElementById("gusts");
+    inputGusts.innerHTML = "Gusts: " + locGusts;
     buildWC;
+
     // Set the current conditions information
-    locSummary = document.getElementById("condition").innerHTML;
+    let inputSummary = document.getElementById("condition");
+    inputSummary.innerHTML = locSummary;
 
     // Set the hourly temperature information
-    tenAM = document.getElementById("10am").innerHTML;
-    elevenAM = document.getElementById("11am").innerHTML;
-    twelvePM = document.getElementById("12pm").innerHTML;
-    onePM = document.getElementById("1pm").innerHTML;
-    twoPM = document.getElementById("2pm").innerHTML;
-    threePM = document.getElementById("3pm").innerHTML;
-    fourPM = document.getElementById("4pm").innerHTML;
-    fivePM = document.getElementById("5pm").innerHTML;
-    sixPM = document.getElementById("6pm").innerHTML;
-    sevenPM = document.getElementById("7pm").innerHTML;
-    eightPM = document.getElementById("8pm").innerHTML;
-    ninePM = document.getElementById("9pm").innerHTML;
-    tenPM = document.getElementById("10pm").innerHTML;
-
+    let inputTenAM = document.getElementById("10am");
+    inputTenAM.innerHTML = "10am: " + tenAM + " |";
+    let inputElevenAM = document.getElementById("11am");
+    inputElevenAM.innerHTML = "11am: " + elevenAM + " |";
+    let inputTwelvePM = document.getElementById("12pm");
+    inputTwelvePM.innerHTML = "12pm: " + twelvePM + " |";
+    let inputOnePM = document.getElementById("1pm");
+    inputOnePM.innerHTML = "1pm: " + onePM + " |";
+    let inputTwoPM = document.getElementById("2pm");
+    inputTwoPM.innerHTML = "2pm: " + twoPM + " |";
+    let inputThreePM = document.getElementById("3pm");
+    inputThreePM.innerHTML = "3pm: " + threePM + " |";
+    let inputFourPM = document.getElementById("4pm");
+    inputFourPM.innerHTML = "4pm: " + fourPM + " |";
+    let inputFivePM = document.getElementById("5pm");
+    inputFivePM.innerHTML = "5pm: " + fivePM + " |";
+    let inputSixPM = document.getElementById("6pm");
+    inputSixPM.innerHTML = "6pm: " + sixPM + " |";
+    let inputSevenPM = document.getElementById("7pm");
+    inputSevenPM.innerHTML = "7pm: " + sevenPM + " |";
+    let inputEightPM = document.getElementById("8pm");
+    inputEightPM.innerHTML = "8pm: " + eightPM + " |";
+    let inputNinePM = document.getElementById("9pm");
+    inputNinePM.innerHTML = "9pm: " + ninePM + " |";
+    let inputTenPM = document.getElementById("10pm");
+    inputTenPM.innerHTML = "10pm: " + tenPM + " |";
     // Set the zip and elevation
-    locZip = document.getElementById("zip").innerHTML;
-    locElevation = document.getElementById("elevation").innerHTML;
-    locLongitude = document.getElementById("longitude").innerHTML;
-    locLatitude = document.getElementById("latitude").innerHTML;
+    let inputZip = document.getElementById("zip");
+    inputZip.innerHTML = "Zip: " + locZip  + " |";
+    let inputElevation = document.getElementById("elevation");
+    inputElevation.innerHTML = "Elevation: " + locElevation + " |";
+    let inputLongitude = document.getElementById("longitude");
+    inputLongitude.innerHTML = locLongitude;
+    let inputLatitude = document.getElementById("latitude");
+    inputLatitude.innerHTML = locLatitude;
 
     // Change the status of the containers
     contentContainer.setAttribute('class', ''); // removes the hide class
