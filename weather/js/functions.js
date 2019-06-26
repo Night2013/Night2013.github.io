@@ -10,7 +10,7 @@ console.log('My javascript is being read.');
     buildWC(speed, temp);
 
 // Variables for windDial()
-    let direction = "SSW";
+    // let direction = "";
     windDial(direction);
 
 // Variables for getConditions()

@@ -137,9 +137,10 @@ let weatherURL = "/weather/js/weather.json"
     inputWind.innerHTML = locWind + "mph";
     let inputDirection = document.getElementById("direction");
     inputDirection.innerHTML = "Wind Direction: " + locDirection;
+    windDial(locDirection);
     let inputGusts = document.getElementById("gusts");
     inputGusts.innerHTML = "Gusts: " + locGusts;
-    buildWC;
+    buildWC(speed, temp);
 
     // Set the current conditions information
     let inputSummary = document.getElementById("condition");
