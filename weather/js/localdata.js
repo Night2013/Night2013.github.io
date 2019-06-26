@@ -1,9 +1,5 @@
 "use strict";
 
-
-
-
-
 let navbar = document.getElementById("nav-bar");
 let statusContainer = document.getElementById("status");
 let contentContainer = document.getElementById("content");
