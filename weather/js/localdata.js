@@ -7,13 +7,27 @@
 let navbar = document.getElementById("nav-bar");
 let statusContainer = document.getElementById("status");
 let contentContainer = document.getElementById("content");
+
+navbar.addEventListener("click", function(evt){
+
+  // Get the city name
+  let cityName = evt.target.innerHTML;
+    switch (cityName) {
+      case "Franklin":
+        case "Greenville":
+          case "Springfield":
+            evt.preventDefault();
+        break;
+  }
+
+let hourlyList = document.getElementById("hourlyData");
 let weatherURL = "/weather/js/weather.json"
 
 // fetches function
-fetchData(weatherURL);
+// fetchData(weatherURL);
 
-function fetchData(weatherURL){
-  let cityName = 'Greenville'; // The data we want from the weather.json file
+// function fetchData(weatherURL){
+  // let cityName = 'Greenville'; // The data we want from the weather.json file
   fetch(weatherURL)
   .then(function(response) {
   if(response.ok){
@@ -180,4 +194,5 @@ function fetchData(weatherURL){
   console.log('There was a fetch problem: ', error.message);
   statusContainer.innerHTML = 'Sorry, the data could not be processed.';
   })
-}
+// }
+})
