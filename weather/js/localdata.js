@@ -5,7 +5,6 @@ let statusContainer = document.getElementById("status");
 let contentContainer = document.getElementById("content");
 
 navbar.addEventListener("click", function(evt){
-
   // Get the city name
   let cityName = evt.target.innerHTML;
     switch (cityName) {
