@@ -279,7 +279,8 @@ function getWeather(stationId) {
       console.log(data);
     
       // Store weather information to localStorage 
-   
+      document.getElementById("status").setAttribute("class", "hide");
+      content.setAttribute("class", "");
    
       // Build the page for viewing 
       
@@ -288,4 +289,23 @@ function getWeather(stationId) {
    } // end getWeather function
 
    // Gets hours from location
-   function getHourly()
+//    function getHourly() {
+//         // NWS User-Agent header (built above) will be the second parameter 
+//     fetch(URL, idHeader) 
+//     .then(function(response){
+//       if(response.ok){ 
+//        return response.json(); 
+//       } 
+//       throw new ERROR('Response not OK.');
+//     })
+//     .then(function (data) { 
+//       // Let's see what we got back
+//       console.log('Json object from getLocation function:'); 
+//       console.log(data);
+//       // Store data into local storage
+//       storage.setItem("h")
+      
+//    })
+//    }
+//    // Build the A
+   
