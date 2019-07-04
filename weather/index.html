@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-us">
+ <head>
+  <meta charset="UTF-8">
+  <title id = "title-page"> | Weather Site</title>
+  <meta name="description" content="A page that shows the weather for Greenville, South Carolina.">
+  <meta name="viewport" content="width=device-width">
+  <link rel = "stylesheet" href = "CSS/screen.css" media = "screen">
+</head>
+ <body>   
+    <header>
+         <img id = "logo" src="../weather/franklin-idaho-pics/logo.jpg" alt="Weather Site Logo">
+         <p id = "site-brand">The Weather Site</p>
+    </header>
+    <section id="status">Please be patient while I get your weather information.</section>
+
+
+
+    <main id = "content" class = "hide">
+        <section>
+            <h1 id = "contentHeading" class = "font">Franklin, ID</h1>
+                 <span id = "zip"><strong>Zip:</strong> 29601 |</span>
+                 <span id = "elevation"><strong>Elevation:</strong><span id = "elevationHeight"> 1514.246m</span> ft |</span>
+                 <span id = "location"><strong>Location:</strong> <span id = "longitude">82.4</span> W,<span id = "latitude"> 34.85</span> N</span>
+        </section>
+    <section id = 'curWeather'>        
+        <section class = "windows" id = "temperature">    
+            <h2 class = "font">Temperature</h2>
+                <p id = "current-temp"><strong>40&#8457;</strong></p>
+                <span id = "daily-high">64&#8457;</span>
+                <span id = "daily-low">41&#8457;</span>
+                <p id = "feel">Feels like <span id = "feelTemp"></span> &#8457;</p>
+        </section>    
+        <section class = "windows" id = "wind">        
+            <h2 class = "font">Wind</h2>
+                <img id = "dial" class = "ssw" src = "franklin-idaho-pics/wind-pointer.png" alt = "Wind Direction">
+                <p id = "wind-speed">8mph</p>
+                <p id = "direction">Wind Direction: SW</p>
+                <p id = "gusts">Gusts: 10-12mph</p>
+        </section>    
+        <section class = "windows" id = "weather">    
+            <h2 id = "condition" class = "font">Thunderstorms</h2>
+                <img id = "rain" src = "franklin-idaho-pics/rain.jpg" alt = "Rain">
+        </section>    
+    </section>
+        <section id = "forecast">
+                <h2 class = "font">Hourly Forecast</h2>
+                    <span id = "10am">10am: 55&#8457; |</span>
+                    <span id = "11am">11am: 55&#8457; |</span>
+                    <span id = "12pm">12pm: 56&#8457; |</span>
+                    <span id = "1pm">1pm: 57&#8457; |</span>
+                    <span id = "2pm">2pm: 57&#8457; |</span>
+                    <span id = "3pm">3pm: 57&#8457; |</span>
+                    <span id = "4pm">4pm: 59&#8457; |</span>
+                    <span id = "5pm">5pm: 59&#8457; |</span>
+                    <span id = "6pm">6pm: 59&#8457; |</span>
+                    <span id = "7pm">7pm: 60&#8457; |</span>
+                    <span id = "8pm">8pm: 61&#8457; |</span>
+                    <span id = "9pm">9pm: 63&#8457; |</span>
+                    <span id = "10pm">10pm: 64&#8457;</span>
+        </section>
+    </main>
+    <footer>
+            <nav id = "nav-bar">
+                    <span><a href = "https://night2013.github.io/">Home</a></span>
+                    <span><a href = "https://night2013.github.io/weather/franklin-idaho.html">Search</a></span>
+                    <span><a href = "https://night2013.github.io/weather/franklin-idaho.html">Franklin</a></span>
+                    <span><a href = "https://night2013.github.io/weather/greenville-south-carolina.html">Greenville</a></span>
+                    <span><a href = "springfield.html">Springfield</a></span>
+            </nav>
+        &copy;2019 Colton Craig
+    </footer>
+    <script src = "/weather/js/functions.js"></script>
+    <script src = "/weather/js/geo_loc.js"></script>
+ </body>
+</html>
