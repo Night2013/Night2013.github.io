@@ -37,6 +37,7 @@ console.log('My javascript is being read.');
     headers: {
       "User-Agent": "Student Learning Project - cra18016@byui.edu"
     }
+
 };
 
 // Calculate the Windchill
@@ -61,9 +62,9 @@ function buildWC(speed, temp) {
 function windDial(direction){
     // Get the wind dial container
     let dial = document.getElementById("dial");
-
+    console.log(direction.innerHTML);
     // Determine the dial class
-    switch (direction){
+    switch (direction.innerHTML){
     case "North":
     case "N":
      dial.setAttribute("class", "n"); //"n" is the CSS rule selector
@@ -227,6 +228,10 @@ function getLocation(locale) {
       let stationsURL = data.properties.observationStations; 
       // Call the function to get the list of weather stations
       getStationId(stationsURL); 
+      let forecastURL = data.properties.forecast;
+      getForecast(forecastURL);
+      let hourlyURL = data.properties.forecastHourly;
+      getHourly(hourlyURL);
      }) 
     .catch(error => console.log('There was a getLocation error: ', error)) 
    } // end getLocation function
@@ -279,33 +284,223 @@ function getWeather(stationId) {
       console.log(data);
     
       // Store weather information to localStorage 
-      document.getElementById("status").setAttribute("class", "hide");
-      content.setAttribute("class", "");
-   
+      storage.setItem("latitude", data.geometry.coordinates[0].toFixed(2));
+      storage.setItem("longitude", data.geometry.coordinates[1].toFixed(2));
+      storage.setItem("windSpeed", data.properties.windSpeed.value);
+      storage.setItem("elevation", data.properties.elevation.value);
+
       // Build the page for viewing 
-      
+      buildPage();
      }) 
     .catch(error => console.log('There was a getWeather error: ', error)) 
    } // end getWeather function
 
+   function getForecast(forecastURL) {
+    fetch(forecastURL, idHeader) 
+    .then(function(response){
+      if(response.ok){ 
+       return response.json(); 
+      } 
+      throw new ERROR('Response not OK.');
+    })
+    .then(function (data) { 
+      // Let's see what we got back
+      console.log('Json object from getForecast function:'); 
+      console.log(data);
+    
+    // Storing weather data in local storage
+    storage.getItem("gusts", data.properties.periods[0].windSpeed);
+    // Determining high and low by the time of day
+    if (data.properties.periods[0].temperature > data.properties.periods[1].temperature) {
+        storage.setItem("dailyHigh", data.properties.periods[0].temperature);
+        storage.setItem("dailyLow", data.properties.periods[1].temperature);
+    }
+    else {
+        storage.setItem("dailyHigh", data.properties.periods[1].temperature);
+        storage.setItem("dailyLow", data.properties.periods[0].temperature);
+    }
+   })
+   .catch(error => console.log("There was a getForecast error: ", error))
+}
+
    // Gets hours from location
-//    function getHourly() {
-//         // NWS User-Agent header (built above) will be the second parameter 
-//     fetch(URL, idHeader) 
-//     .then(function(response){
-//       if(response.ok){ 
-//        return response.json(); 
-//       } 
-//       throw new ERROR('Response not OK.');
-//     })
-//     .then(function (data) { 
-//       // Let's see what we got back
-//       console.log('Json object from getLocation function:'); 
-//       console.log(data);
-//       // Store data into local storage
-//       storage.setItem("h")
-      
-//    })
-//    }
-//    // Build the A
+   function getHourly(hourlyURL) {
+        // NWS User-Agent header (built above) will be the second parameter 
+    fetch(hourlyURL, idHeader) 
+    .then(function(response){
+      if(response.ok){ 
+       return response.json(); 
+      } 
+      throw new ERROR('Response not OK.');
+    })
+    .then(function (data) { 
+      // Let's see what we got back
+      console.log('Json object from getHourly function:'); 
+      console.log(data);
+
+      storage.setItem("hourOne", data.properties.periods[0].temperature);
+      storage.setItem("hourTwo", data.properties.periods[1].temperature);
+      storage.setItem("hourThree", data.properties.periods[2].temperature);
+      storage.setItem("hourFour", data.properties.periods[3].temperature);
+      storage.setItem("hourFive", data.properties.periods[4].temperature);
+      storage.setItem("hourSix", data.properties.periods[5].temperature);
+      storage.setItem("hourSeven", data.properties.periods[6].temperature);
+      storage.setItem("hourEight", data.properties.periods[7].temperature);
+      storage.setItem("hourNine", data.properties.periods[8].temperature);
+      storage.setItem("hourTen", data.properties.periods[9].temperature);
+      storage.setItem("hourEleven", data.properties.periods[10].temperature);
+      storage.setItem("hourTwelve", data.properties.periods[11].temperature);
+      storage.setItem("hourThirteen", data.properties.periods[12].temperature);
+
+      console.log(hourOne);
+      // Store data into local storage
+      let ct = new Date();
+      console.log(ct);
+      let hour = ct.getHours();
+      console.log(hour);
+      let test = format_time(hour);
+      console.log(test);
+      storage.setItem("hour1", format_time(hour));
+      storage.setItem("hour2", format_time(hour + 1));
+      storage.setItem("hour3" , format_time(hour + 2));
+      storage.setItem("hour4" , format_time(hour + 3));
+      storage.setItem("hour5" , format_time(hour + 4));
+      storage.setItem("hour6" , format_time(hour + 5));
+      storage.setItem("hour7" , format_time(hour + 6));
+      storage.setItem("hour8" , format_time(hour + 7));
+      storage.setItem("hour9" , format_time(hour + 8));
+      storage.setItem("hour10" , format_time(hour + 9));
+      storage.setItem("hour11" , format_time(hour + 10));
+      storage.setItem("hour12" , format_time(hour + 11));
+      storage.setItem("hour13" , format_time(hour + 12));
+
+      // Get direction
+      storage.setItem("direction", data.properties.periods[0].windDirection);
+
+      // Get current temp
+      storage.setItem("current-temp", data.properties.periods[0].temperature);
+
+      // Get summary
+      storage.setItem("condition", data.properties.periods[0].shortForecast);
+    })
+    .catch(error => console.log("There was an error in getHourly function", error));
+   }
+   // Populate the current location weather page
+    function buildPage(){
+    // Populate weather information
+        let temperature = storage.getItem("current-temp");
+        let wind = storage.getItem("windSpeed");
+        let condition = storage.getItem("condition");
+        let elevation = storage.getItem("elevation");
+        let windDirection = storage.getItem("direction");
+        let gusts = storage.getItem("gusts");
+        let dailyHigh = storage.getItem("dailyHigh");
+        let dailyLow = storage.getItem('dailyLow');
+
+        console.log(gusts);
+    // Populate location information
+        let locName = storage.getItem("locName");
+        let locState = storage.getItem("locState");
+        let latitude = storage.getItem("latitude");
+        let longitude = storage.getItem("longitude");
+    // Populate temperature for each hour
+        let hourOne = storage.getItem('hourOne');
+        let hourTwo = storage.getItem('hourTwo');
+        let hourThree = storage.getItem('hourThree');
+        let hourFour = storage.getItem('hourFour');
+        let hourFive = storage.getItem('hourFive');
+        let hourSix = storage.getItem('hourSix');
+        let hourSeven = storage.getItem('hourSeven');
+        let hourEight = storage.getItem('hourEight');
+        let hourNine = storage.getItem('hourNine');
+        let hourTen = storage.getItem('hourTen');
+        let hourEleven = storage.getItem('hourEleven');
+        let hourTwelve = storage.getItem('hourTwelve');
+        let hourThirteen = storage.getItem('hourThirteen');
+        
+        console.log(hourOne);
+    // Populate hour for each temperature
+        let hour1 = storage.getItem('hour1');
+        let hour2 = storage.getItem('hour2');
+        let hour3 = storage.getItem('hour3');
+        let hour4 = storage.getItem('hour4');
+        let hour5 = storage.getItem('hour5');
+        let hour6 = storage.getItem('hour6');
+        let hour7 = storage.getItem('hour7');
+        let hour8 = storage.getItem('hour8');
+        let hour9 = storage.getItem('hour9');
+        let hour10 = storage.getItem('hour10');
+        let hour11 = storage.getItem('hour11');
+        let hour12 = storage.getItem('hour12');
+        let hour13 = storage.getItem('hour13');
+
+        console.log(hour1);
+
+    // Put variables in html
+    // Time
+        document.getElementById('hour1').innerHTML = hour1;
+        document.getElementById('hour2').innerHTML = hour2;
+        document.getElementById('hour3').innerHTML = hour3;
+        document.getElementById('hour4').innerHTML = hour4;
+        document.getElementById('hour5').innerHTML = hour5;
+        document.getElementById('hour6').innerHTML = hour6;
+        document.getElementById('hour7').innerHTML = hour7;
+        document.getElementById('hour8').innerHTML = hour8;
+        document.getElementById('hour9').innerHTML = hour9;
+        document.getElementById('hour10').innerHTML = hour10;
+        document.getElementById('hour11').innerHTML = hour11;
+        document.getElementById('hour12').innerHTML = hour12;
+        document.getElementById('hour13').innerHTML = hour13;
+
+    // Temp
+        document.getElementById('hourOne').innerHTML = hourOne;
+        document.getElementById('hourTwo').innerHTML = hourTwo;
+        document.getElementById('hourThree').innerHTML = hourThree;
+        document.getElementById('hourFour').innerHTML = hourFour;
+        document.getElementById('hourFive').innerHTML = hourFive;
+        document.getElementById('hourSix').innerHTML = hourSix;
+        document.getElementById('hourSeven').innerHTML = hourSeven;
+        document.getElementById('hourEight').innerHTML = hourEight;
+        document.getElementById('hourNine').innerHTML = hourNine;
+        document.getElementById('hourTen').innerHTML = hourTen;
+        document.getElementById('hourEleven').innerHTML = hourEleven;
+        document.getElementById('hourTwelve').innerHTML = hourTwelve;
+        document.getElementById('hourThirteen').innerHTML = hourThirteen;
+
+    // Title
+        let pageTitle = locName + ', ' + locState;
+        console.log(pageTitle);
+        document.getElementById('contentHeading').innerHTML = pageTitle;
+        document.getElementById('title-page').innerHTML = pageTitle + ' | Weather Site';
+    // Latitude + Longitude
+        document.getElementById('latitude').innerHTML = latitude;
+        document.getElementById('longitude').innerHTML = longitude;
+    // Elevation
+        convertMeters(elevation);
+    // High and Low
+        document.getElementById('dailyHigh').innerHTML = dailyHigh + '&deg;F';
+        document.getElementById('dailyLow').innerHTML = dailyLow + '&deg;F';
+    // Current temp
+        document.getElementById('current-temp').innerHTML = temperature + '&deg;F';
+    // Wind
+        document.getElementById('wind-speed').innerHTML = Math.round(wind) + ' mph';
+        document.getElementById('gusts').innerHTML = gusts;
+        document.getElementById('direction').innerHTML = windDirection;
+    // Run windDial()
+        windDial(direction);
+    // Run buildWC()
+        buildWC(wind, temp);
+    // Condition
+        document.getElementById('condition').innerHTML = condition;
+    // Remove hide and displaying content
+        document.getElementById("status").setAttribute("class", "hide");
+        content.setAttribute("class", "");
+   }
+
+   // Converting Celcius to Fahrenheit
+   function convertToFahrenheit(temp) {
+       let fahrenheit = (temp * 9/5) + 32;
+       let avgFahrenheit = Math.round(fahrenheit);
+       return avgFahrenheit;
+   }
    

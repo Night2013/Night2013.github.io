@@ -94,11 +94,11 @@ html {
     left: 50%;
     transform: translate(-50%, -200%);
   }
-#daily-high {
+#dailyHigh {
     color: red;
 }
 
-#daily-low {
+#dailyLow {
     color: blue;
 }
 
