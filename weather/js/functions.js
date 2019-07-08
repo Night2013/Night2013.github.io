@@ -135,7 +135,7 @@ function getCondition(condition) {
 function changeSummaryImage(newCondition) {
     // Checks the weather condition
     console.log(newCondition);
-
+    let conditionBox = document.getElementById("conditionBox");
     // Changes the class depending on condition
     switch(newCondition) {
         // Clear
@@ -316,7 +316,7 @@ function getWeather(stationId) {
       console.log(data);
     
     // Storing weather data in local storage
-    storage.getItem("gusts", data.properties.periods[0].windSpeed);
+    storage.setItem("gusts", data.properties.periods[0].windSpeed);
     // Determining high and low by the time of day
     if (data.properties.periods[0].temperature > data.properties.periods[1].temperature) {
         storage.setItem("dailyHigh", data.properties.periods[0].temperature);

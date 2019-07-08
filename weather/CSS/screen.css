@@ -110,8 +110,10 @@ html {
     height: 50px;
 }
 
-#rain {
+#conditionBox {
     height: 200px;
+    width: 200px;
+    margin: auto;
 }
 
 footer{
