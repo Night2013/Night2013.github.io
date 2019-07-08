@@ -3,11 +3,11 @@
 console.log('test');
 console.log('My javascript is being read.');
 
-// Variables for Function Use
-// Variables for buildWC()
-    let temp = 31;
-    let speed = 5;
-    buildWC(speed, temp);
+// // Variables for Function Use
+// // Variables for buildWC()
+//     let temp = 31;
+//     let speed = 5;
+//     buildWC(speed, temp);
 
 // Variables for windDial()
     // let direction = "";
@@ -41,20 +41,21 @@ console.log('My javascript is being read.');
 };
 
 // Calculate the Windchill
-function buildWC(speed, temp) {
+function buildWC(speed, temperature) {
   let feelTemp = document.getElementById('feelTemp');   
     // Compute the windchill
-    let wc = 35.74 + 0.6215 * temp - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temp * Math.pow(speed, 0.16);
+    let wc = 35.74 + 0.6215 * temperature - 35.75 * Math.pow(speed, 0.16) + 0.4275 * temperature * Math.pow(speed, 0.16);
     console.log(wc);
 
     // Round the answer down to integer
     wc = Math.floor(wc);
 
     // If chill is greater than temp, return the temp
-    wc = (wc > temp)?temp:wc;
+    wc = (wc > temperature)?temperature:wc;
 
     // Display the windchill
     console.log(wc);
+    wc = 'Feels like ' + wc + '&deg;F';
     feelTemp.innerHTML = wc;
 }
 
@@ -495,7 +496,7 @@ function getWeather(stationId) {
     // Run windDial()
         windDial(direction);
     // Run buildWC()
-        buildWC(wind, temp);
+        buildWC(wind, temperature);
     // Condition
         let newCondition = getCondition(condition);
         changeSummaryImage(newCondition);
@@ -506,8 +507,8 @@ function getWeather(stationId) {
    }
 
    // Converting Celcius to Fahrenheit
-   function convertToFahrenheit(temp) {
-       let fahrenheit = (temp * 9/5) + 32;
+   function convertToFahrenheit(temperature) {
+       let fahrenheit = (temperature * 9/5) + 32;
        let avgFahrenheit = Math.round(fahrenheit);
        return avgFahrenheit;
    }
