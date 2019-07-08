@@ -13,10 +13,10 @@ console.log('My javascript is being read.');
     // let direction = "";
     windDial(direction);
 
-// Variables for getConditions()
-    let condition = "cloud";
-    let newCondition = getCondition(condition);
-    changeSummaryImage(newCondition);
+// // Variables for getConditions()
+//     let condition = "cloud";
+//     let newCondition = getCondition(condition);
+//     changeSummaryImage(newCondition);
 
 // Variables for convertMeters()
     let meters = 1200;
@@ -105,24 +105,25 @@ function windDial(direction){
 }
 
 // Get the weather condition
-function getCondition(condtion) {
+function getCondition(condition) {
     // check if the condition passed
     console.log(condition);
+    let lowerCondition = condition.toLowerCase();
     switch(true) {
         // Clear
-        case (condition.includes("clear")) || condition.includes("sunny"):
+        case (lowerCondition.includes("clear")) || lowerCondition.includes("sunny"):
             return "clear";
         // Rain
-        case (condition.includes("rain")) || condition.includes("wet"):
+        case (lowerCondition.includes("rain")) || lowerCondition.includes("wet"):
             return "rain";
         // Fog
-        case (condition.includes("fog")):
+        case (lowerCondition.includes("fog")):
             return "fog";
         // Snow
-        case (condition.includes("snow")):
+        case (lowerCondition.includes("snow")):
             return "snow";
         // Clouds
-        case (condition.includes("cloud")):
+        case (lowerCondition.includes("cloud")):
             return "clouds";
         default:
             return "clear";
@@ -138,18 +139,23 @@ function changeSummaryImage(newCondition) {
     switch(newCondition) {
         // Clear
         case "clear": curWeather.setAttribute("class", "clear");
+        conditionBox.setAttribute('class', 'clear');
         break;
         // Rain
         case "rain": curWeather.setAttribute("class", "rain");
+        conditionBox.setAttribute('class', 'rain');
         break;
         // Fog
         case "fog": curWeather.setAttribute("class", "fog");
+        conditionBox.setAttribute('class', 'fog');
         break;
         // Snow
         case "snow": curWeather.setAttribute("class", "snow");
+        conditionBox.setAttribute('class', 'snow');
         break;
         // Clouds
         case "clouds": curWeather.setAttribute("class", "clouds");
+        conditionBox.setAttribute('class', 'clouds');
         break;
     }
 }
@@ -477,11 +483,11 @@ function getWeather(stationId) {
         document.getElementById('longitude').innerHTML = longitude;
     // Elevation
         convertMeters(elevation);
+    // Current temp
+        document.getElementById('current-temp').innerHTML = temperature + '&deg;F';
     // High and Low
         document.getElementById('dailyHigh').innerHTML = dailyHigh + '&deg;F';
         document.getElementById('dailyLow').innerHTML = dailyLow + '&deg;F';
-    // Current temp
-        document.getElementById('current-temp').innerHTML = temperature + '&deg;F';
     // Wind
         document.getElementById('wind-speed').innerHTML = Math.round(wind) + ' mph';
         document.getElementById('gusts').innerHTML = gusts;
@@ -491,6 +497,8 @@ function getWeather(stationId) {
     // Run buildWC()
         buildWC(wind, temp);
     // Condition
+        let newCondition = getCondition(condition);
+        changeSummaryImage(newCondition);
         document.getElementById('condition').innerHTML = condition;
     // Remove hide and displaying content
         document.getElementById("status").setAttribute("class", "hide");
