@@ -140,6 +140,8 @@ footer{
 
 /* 3. Mobile Rules */
 #curWeather {
+    z-index: -1;
+    background-repeat: no-repeat;
     background-size: cover;
    }
    
