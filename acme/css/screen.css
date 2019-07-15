@@ -8,7 +8,58 @@
 /* 1. Imports */
 
 /* 2. General Rules */
+body {
+    font-family: sans-serif;
+}
 
+main {
+    border-bottom: 5px solid black;
+}
+
+footer {
+    text-align: center;
+}
+
+nav {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    color: white;
+}
+
+ nav {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+ }
+body {
+    background-image: url(/acme/images/site/background.jpg);
+    background-repeat: no-repeat;
+}
+
+#white {
+    background-color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 /* 3. Mobile Rules */
+body {
+    background-size: cover;
+}
 
 /* 4. Large Screen Rules */
+@media screen and (min-width: 500px) {
+
+    body {
+        background-size: cover;
+    }
+
+    footer {
+        font-size: .9em;
+    }
+}
