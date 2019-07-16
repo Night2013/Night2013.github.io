@@ -47,10 +47,25 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+
 /* 3. Mobile Rules */
 body {
     background-size: cover;
 }
+
+.container {
+    position: relative;
+    text-align: left;
+    color: red;
+}
+
+.picText {
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    text-decoration: none;
+    list-style: none;
+  }
 
 /* 4. Large Screen Rules */
 @media screen and (min-width: 500px) {
