@@ -6,10 +6,14 @@
 */
 
 /* 1. Imports */
-
+@import url(/acme-project/css/normalize.css);
 /* 2. General Rules */
 body {
     font-family: sans-serif;
+}
+
+.hide {
+    display: none!important;
 }
 
 main {
@@ -21,42 +25,118 @@ footer {
 }
 
 nav {
-    background-color: red;
+    background-color: #de2226;
     display: flex;
     align-items: center;
     height: 50px;
-    color: white;
+    color: #ffffff;
+}
+
+h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
  nav {
      display: flex;
      flex-direction: row;
      justify-content: space-around;
+     padding-left: 5px;
+     margin-bottom: 0px;
  }
 body {
-    background-image: url(/acme/images/site/background.jpg);
+    background-image: url(/acme-project/images/site/background.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #white {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block;
 }
 
+#homePage {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipeList a {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+
+#recipesAndReviews {
+    display: flex;
+}
+
+#recipes figure {
+    width: 45%;
+    margin: 0px;
+}
+
+#feature ul li {
+    margin: 0px;
+}
+
+#aboutItem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+}
+
+#path {
+    max-width: 50%;
+    padding: 0px 5px 0px 5px;
+}
+
+#info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#priceText {
+    color: #de2226;
+    font-size: 1.6em;
+    margin-top: 0px;
+}
+
+#itemInfo p {
+    margin-top: 0px;
+}
+
+#manufacturer {
+    margin-bottom: 1px;
+}
+
+#recipes img {
+    width: 50%;
+}
+
+#recipes a {
+    display: flex;
+    justify-content: center;
+}
 /* 3. Mobile Rules */
 body {
     background-size: cover;
 }
 
-.container {
+#feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     position: relative;
     text-align: left;
-    color: red;
+    color: #990033;
 }
 
 .picText {
@@ -67,27 +147,152 @@ body {
     list-style: none;
   }
 
-/* 4. Large Screen Rules */
-@media screen and (min-width: 500px) {
+  body>div {
+    width: 95%;
+    margin: 0 auto;
+}
 
-    body {
-        background-size: cover;
-    }
+#feature {
+    background-image: url(../images/site/feature.jpg);
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#feature h2 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#feature ul img {
+    margin-top: 2px;
+}
+
+#feature ul {
+    padding-right: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 0px;
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+nav ul li {
+    padding: 5px 14px 5px 0px;
+}
+
+nav a {
+    font-size: 4.8vw;
+}
+
+#reviewsAndRecipes h2 {
+    margin-left: 10px;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+#reviews h2 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#reviews ul {
+    margin-top: 10px;
+}
+
+#recipes h2 {
+    margin-bottom: 10px;
+}
+#reviews li {
+    font-size: 1.4em;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+#recipesList {
+    padding-left: 0px;
+    margin-top: 0px;
+}
+
+#price {
+    color: #de2226;
+}
+/* 4. Large Screen Rules */
+
+    @media screen and (min-width: 800px) {
 
     #white {
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
     }
 
-    footer {
-        font-size: .9em;
+    #picText {
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 2.0em;
+    }
+
+    #feature ul {
+        padding-right: 100px;
+        background-color: transparent;
+    }
+
+    h1 {
+        font-size: 4em;
+        padding-left: 10px;
+    }
+
+    #feature {
+        background-image: url(../images/site/feature.jpg);
+        height: 600px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     #reviewsAndRecipes {
         display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #reviews {
+        width: 60%;
+    }
+
+    #reviews li {
+        font-size: 2em;
     }
 
     #recipes {
-        flex-wrap: wrap;
-        flex-direction: row-reverse;
+        width: 40%;
+    }
+
+    #feature h2 {
+        font-size: 3.8em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #reviewsAndRecipes h2 {
+        font-size: 3em;
+        margin-top: 10px;
+    }
+
+    #feature p {
+        font-size: 2em;
+        margin: 0px;
+    }
+
+    #path {
+        padding: 0px 20px 0px 20px;
+    }
+
+    #info {
+        font-size: 2em;
     }
 }
