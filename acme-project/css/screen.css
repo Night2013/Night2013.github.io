@@ -125,6 +125,10 @@ nav a {
     display: flex;
     justify-content: center;
 }
+
+#picText1 {
+    font-size: 100em;
+}
 /* 3. Mobile Rules */
 body {
     background-size: cover;
@@ -229,7 +233,7 @@ h1 {
         margin: 0 auto;
     }
 
-    #picText {
+    .picText {
         padding: 15px;
     }
 
